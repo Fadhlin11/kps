@@ -29,7 +29,8 @@ Route::get('/dashboard','App\Http\Controllers\DashboardController@index');
 
 Route::group(['middleware'=>['auth','patient']],function(){
 
-    Route::post('/make/appointment','App\Http\Controllers\FrontController@store')->name('booking.appointment');
+    Route::post('/make/appointment', 'App\Http\Controllers\FrontController@store')->name('booking.appointment');
+
 
     Route::get('/my-appointment','App\Http\Controllers\FrontController@mybookings')->name('my.appointment')->middleware('auth');
 

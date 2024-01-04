@@ -23,33 +23,40 @@ class AppointmentEmail extends Mailable
         $this->mailData = $mailData;
     }
 
-    /**
-     * Get the message envelope.
-     */
-    public function envelope(): Envelope
+    // /**
+    //  * Get the message envelope.
+    //  */
+    // public function envelope(): Envelope
+    // {
+    //     return new Envelope(
+    //         subject: 'Appointment Email',
+    //     );
+    // }
+
+    // /**
+    //  * Get the message content definition.
+    //  */
+    // public function content(): Content
+    // {
+    //     return new Content(
+    //         view: 'email.appointment',
+    //     );
+    // }
+
+    // /**
+    //  * Get the attachments for the message.
+    //  *
+    //  * @return array<int, \Illuminate\Mail\Mailables\Attachment>
+    //  */
+    // public function attachments(): array
+    // {
+    //     return [];
+    // }
+
+    public function build()
     {
-        return new Envelope(
-            subject: 'Appointment Email',
-        );
+        return $this->view('email.appointment')->with('mailData', $this->mailData);
     }
 
-    /**
-     * Get the message content definition.
-     */
-    public function content(): Content
-    {
-        return new Content(
-            view: 'email.appointment',
-        );
-    }
 
-    /**
-     * Get the attachments for the message.
-     *
-     * @return array<int, \Illuminate\Mail\Mailables\Attachment>
-     */
-    public function attachments(): array
-    {
-        return [];
-    }
 }

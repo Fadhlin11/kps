@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Models\Booking;
 use App\Models\Treatment;
 use App\Mail\AppointmentEmail;
+use Illuminate\Support\Facades\Mail;
 
 class FrontController extends Controller
 {
@@ -40,50 +41,51 @@ class FrontController extends Controller
 
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+{
+    date_default_timezone_set('Asia/Kuala_Lumpur');
 
-        date_default_timezone_set('Asia/Kuala_Lumpur');
+    $request->validate(['slot' => 'required']);
 
-        $request->validate(['slot'=>'required']);
-
-        $check = $this->checkBookingTimeInterval();
-        if($check){
-            return redirect()->back()->with('errmessage', 'You Already Booked An Appointment. Please Wait to Book Another Appointment!');
-        }
-
-
-        Booking::create([
-            'user_id'=>auth()->user()->id,
-            'dentist_id'=>$request->dentistId,
-            'slot'=>$request->slot,
-            'date'=>$request->date,
-            'status'=>0
-        ]);
-
-        Slot::where('appointment_id',$request->appointmentId)
-            ->where('slot',$request->slot)
-            ->update(['status'=>1]);
-
-            
-        //send email notification
-        $dentistName = User::where('id',$request->dentistId)->first();
-        $mailData = [
-            'name'=>auth()->user()->name,
-            'time'=>$request->time,
-            'date'=>$request->date,
-            'dentistName' => $dentistName->name
-
-        ];
-        try{
-           \Mail::to(auth()->user()->email)->send(new AppointmentEmail($mailData));
-
-        }catch(\Exception $e){
-
-        }
-
-
-        return redirect()->back()->with('message', 'Appointment Successfully Booked');
+    $check = $this->checkBookingTimeInterval();
+    if ($check) {
+        return redirect()->back()->with('errmessage', 'You Already Booked An Appointment. Please Wait to Book Another Appointment!');
     }
+
+    Booking::create([
+        'user_id' => auth()->user()->id,
+        'dentist_id' => $request->dentistId,
+        'slot' => $request->slot,
+        'date' => $request->date,
+        'status' => 0
+    ]);
+
+    Slot::where('appointment_id', $request->appointmentId)
+        ->where('slot', $request->slot)
+        ->update(['status' => 1]);
+
+    //send email notification
+    $dentistName = User::where('id', $request->dentistId)->first();
+    $mailData = [
+        'name' => auth()->user()->name,
+        'time' => $request->time,
+        'date' => $request->date,
+        'dentistName' => $dentistName->name
+    ];
+
+    try {
+        \Mail::to(auth()->user()->email)->send(new AppointmentEmail($mailData));
+    } catch (\Exception $e) {
+        // Log the error
+        \Illuminate\Support\Facades\Log::error('Error sending email: ' . $e->getMessage());
+        
+        // Handle the error in a way that suits your application
+        // For example, you can flash a message to the user
+        return redirect()->back()->with('errmessage', 'Error sending email. Please try again later.');
+    }
+
+    return redirect()->back()->with('message', 'Appointment Successfully Booked');
+}
 
     public function checkBookingTimeInterval(){
         return Booking::orderBy('id', 'desc')
