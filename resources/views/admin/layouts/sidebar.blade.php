@@ -2,12 +2,12 @@
                 <div class="app-sidebar colored" style="background-color: #023020 !important;">
                     <div class="sidebar-header" style="background-color: #023020 !important;">
                         <a class="header-brand" href="{{url('dashboard')}}">
-                            <div class="logo-img">
-                            </div>
+                        <div class="logo-img">
+                            <img src="{{ asset('banner/logo.png') }}" alt="Logo" style="width: 30px; height: auto;">
+                        </div>
                             <span class="text">KPS</span>
                         </a>
-                        <button type="button" class="nav-toggle"><i data-toggle="expanded" class="ik ik-toggle-right toggle-icon"></i></button>
-                        <button id="sidebarClose" class="nav-close"><i class="ik ik-x"></i></button>
+                        
                     </div>
                     
                     <div class="sidebar-content" style="background-color: #577d5d !important;">
@@ -20,7 +20,7 @@
                               
                                 @if(auth()->check()&& auth()->user()->roles->name === 'admin')
                                 <div class="nav-item has-sub" style="background-color: #577d5d !important;">
-                                    <a href="javascript:void(0)"><i class="ik ik-layers"></i><span>Dentist</span> <span class="badge badge-danger"></span></a>
+                                    <a href="javascript:void(0)"><i class="ik ik-users"></i><span>Dentist</span> <span class="badge badge-danger"></span></a>
                                     <div class="submenu-content" style="background-color: #577d5d !important;">
                                         <a href="{{route('dentist.create')}}" class="menu-item">Create New Dentist</a>
                                         <a href="{{route('dentist.index')}}" class="menu-item">View Dentist List</a>
@@ -30,7 +30,7 @@
 
                                 @if(auth()->check()&& auth()->user()->roles->name === 'dentist')
                                 <div class="nav-item has-sub" style="background-color: #577d5d !important;">
-                                    <a href="javascript:void(0)"><i class="ik ik-layers"></i><span>Appointment Slot</span> <span class="badge badge-danger"></span></a>
+                                    <a href="javascript:void(0)"><i class="ik ik-users"></i><span>Appointment Slot</span> <span class="badge badge-danger"></span></a>
                                     <div class="submenu-content" style="background-color: #577d5d !important;">
                                         <a href="{{route('appointment.create')}}" class="menu-item">Create New Slot</a>
                                         <a href="{{route('appointment.index')}}" class="menu-item">Check & Update Slot</a>

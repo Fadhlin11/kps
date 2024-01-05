@@ -8,7 +8,7 @@
         <meta name="keywords" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
-        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="{{ asset('banner/logo.png') }}" type="image/png" />
 
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800" rel="stylesheet">
         
@@ -44,19 +44,14 @@
                             <div class="dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="notiDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
                                 <div class="dropdown-menu dropdown-menu-right notification-dropdown" aria-labelledby="notiDropdown">
-                                    <h4 class="header">Notifications</h4>
-                                    <div class="notifications-wrap">
-                                        
-                                        
-                                        
-                                    </div>
-                                    <div class="footer"><a href="javascript:void(0);">See all activity</a></div>
+                                    
+                                    <div class="footer"><a href="#"></a></div>
                                 </div>
                             </div>
                            
                             <div class="dropdown">
                                 <a class="dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <strong>{{ strtoupper (Auth::user()->name) }}</strong>
+                                {{ strtoupper (Auth::user()->name) }}
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"

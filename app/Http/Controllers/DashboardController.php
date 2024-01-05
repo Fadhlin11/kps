@@ -11,11 +11,13 @@ class DashboardController extends Controller
     {
         $this->middleware('auth');
     }
-    public function index(){
-        //dd(Auth::user()->user_type->name);
-        if(Auth::user()->roles->name=='patient'){
-            return view('home');
+
+    public function index()
+    {
+        if (Auth::user()->roles->name == 'patient') {
+            return redirect('/');
         }
+
         return view('dashboard');
     }
 }

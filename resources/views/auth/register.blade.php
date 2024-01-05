@@ -1,19 +1,24 @@
 @extends('layouts.app')
 
 @section('content')
+<body style="background: url('{{ asset('banner/background.png') }}') no-repeat center center fixed; background-size: cover; overflow: auto; margin: 0;">
+
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center align-items-center">
         <div class="col-md-8">
-            <div class="card">
+            <!-- Logo Section -->
+            <div class="mb-4 text-center">
+                <img src="{{ asset('banner/logo.png') }}" alt="Logo" class="img-fluid rounded-circle" style="max-width: 200px;">
+            </div>
+
+            <!-- Registration Form -->
+            <div class="card p-4" style="background-color: rgba(255, 255, 255, 0.8);">
                 <div class="card-header">{{ __('REGISTRATION') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
-                        <div class="logo-centered">
-                                <a href="../index.html"><img src="../src/img/brand.svg" alt=""></a></div>
-                                
                         <div class="row mb-3">
                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
 
@@ -64,12 +69,6 @@
                             </div>
                         </div>
 
-                        @error('password-confirm')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-
                         <div class="row mb-3">
                             <label for="gender" class="col-md-4 col-form-label text-md-end">{{ __('Gender') }}</label>
 
@@ -79,16 +78,16 @@
                                     <option value="male">Male</option>
                                     <option value="female">Female</option>
                                 </select>
-                            </div>
 
-                            @error('role')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
+                                @error('gender')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
                         </div>
 
-                         <div class="row mb-3">
+                        <div class="row mb-3">
                             <label for="address" class="col-md-4 col-form-label text-md-end">{{ __('Address') }}</label>
 
                             <div class="col-md-6">
@@ -118,7 +117,7 @@
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-success">
                                     {{ __('Register') }}
                                 </button>
                             </div>
@@ -129,4 +128,5 @@
         </div>
     </div>
 </div>
+</body>
 @endsection

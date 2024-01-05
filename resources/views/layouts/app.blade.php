@@ -14,6 +14,8 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <!-- Style -->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="icon" href="{{ asset('banner/logo.png') }}" type="image/png" />
+
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>

@@ -22,6 +22,7 @@ use App\Http\Controllers\TreatmentController;
 
 Route::get('/', 'App\Http\Controllers\FrontController@index');
 
+Route::get('/new-appointment/{dentistId}/{date}','App\Http\Controllers\FrontController@show')->name('create.appointment');
 
 Route::get('/dashboard','App\Http\Controllers\DashboardController@index');
 
@@ -38,8 +39,6 @@ Route::group(['middleware'=>['auth','patient']],function(){
     Route::post('/profile', [ProfileController::class, 'store'])->name('profile.store');
 
     Route::get('/my-treatment','App\Http\Controllers\FrontController@myTreatment')->name('my.treatment');
-    Route::get('/new-appointment/{dentistId}/{date}','App\Http\Controllers\FrontController@show')->name('create.appointment');
-
        
 });
 
