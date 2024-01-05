@@ -16,9 +16,7 @@
         </div>
         <div style="text-align: center;">
             <h1 style="color: #333; font-family: 'Poppins', sans-serif; font-size: 50px; margin-bottom: 20px;">KLINIK PERGIGIAN SYARIFAH</h1>
-            <div class="mt-5">
-                <a href="{{ route('register') }}" class="btn btn-success" style="background-color: #28a745; color: #fff; font-family: 'Poppins', sans-serif;">REGISTER</a>
-            </div>
+            
         </div>
     </div>
 
