@@ -14,7 +14,6 @@
                     <tr>
                     
                     <th scope="col">Treatment Date</th>
-                    <th scope="col">Patient Name</th>
                     <th scope="col">Dentist Name</th>
                     <th scope="col">Treatment Name</th>
                     <th scope="col">Treatment Description</th>
@@ -26,11 +25,10 @@
                     <tr>
                     
                     <td>{{$treatment->date}}</td>
-                    <td>{{$treatment->user->name}}</td>
                     <td>{{$treatment->dentist->name}}</td>
                     <td>{{$treatment->name_of_treatment}}</td>
                     <td>{{$treatment->treatment_description}}</td>
-                    <td>{{$treatment->prescription}}</td>
+                    <td>{{$treatment->prescriptions}}</td>
                     </tr>
                     <tr>
                         @empty
