@@ -18,7 +18,7 @@
                     <th scope="col">Treatment Name</th>
                     <th scope="col">Treatment Description</th>
                     <th scope="col">Treatment Prescription (If Any) </th>
-                    </tr> 
+                    </tr>  
                 </thead>
                 @forelse($treatments as $key=>$treatment)
                 <tbody>
