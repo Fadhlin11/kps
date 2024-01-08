@@ -12,18 +12,18 @@
                 <table class="table">
                 <thead>
                     <tr>
-                    
+                    <th scope="col">No.</th>
                     <th scope="col">Treatment Date</th>
                     <th scope="col">Dentist Name</th>
                     <th scope="col">Treatment Name</th>
                     <th scope="col">Treatment Description</th>
                     <th scope="col">Treatment Prescription (If Any) </th>
-                    </tr>
+                    </tr> 
                 </thead>
-                @forelse($treatments as $treatment)
+                @forelse($treatments as $key=>$treatment)
                 <tbody>
                     <tr>
-                    
+                    <th scope="row">{{$key+1}}</th>
                     <td>{{$treatment->date}}</td>
                     <td>{{$treatment->dentist->name}}</td>
                     <td>{{$treatment->name_of_treatment}}</td>
