@@ -36,7 +36,7 @@ Route::group(['middleware'=>['auth','patient']],function(){
 
     //profile patient
     Route::get('/profile', [ProfileController::class, 'index']);
-    Route::post('/profile', [ProfileController::class, 'store'])->name('profile.store');
+    Route::patch('/profile', [ProfileController::class, 'store'])->name('profile.store');
 
     Route::get('/my-treatment','App\Http\Controllers\FrontController@myTreatment')->name('my.treatment');
        
