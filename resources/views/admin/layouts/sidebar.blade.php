@@ -20,10 +20,10 @@
                               
                                 @if(auth()->check()&& auth()->user()->roles->name === 'admin')
                                 <div class="nav-item has-sub" style="background-color: #577d5d !important;">
-                                    <a href="javascript:void(0)"><i class="ik ik-users"></i><span>Dentist</span> <span class="badge badge-danger"></span></a>
+                                    <a href="javascript:void(0)"><i class="ik ik-users"></i><span>User</span> <span class="badge badge-danger"></span></a>
                                     <div class="submenu-content" style="background-color: #577d5d !important;">
-                                        <a href="{{route('dentist.create')}}" class="menu-item">Create New Dentist</a>
-                                        <a href="{{route('dentist.index')}}" class="menu-item">View Dentist List</a>
+                                        <a href="{{route('dentist.create')}}" class="menu-item">Create New User</a>
+                                        <a href="{{route('dentist.index')}}" class="menu-item">View User List</a>
                                     </div>
                                 </div>
                                 @endif
