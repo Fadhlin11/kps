@@ -17,7 +17,7 @@
                     <th scope="col">Dentist Name</th>
                     <th scope="col">Treatment Name</th>
                     <th scope="col">Treatment Description</th>
-                    <th scope="col">Treatment Prescription (If any) </th>
+                    <th scope="col">Treatment Prescription (If Any) </th>
                     </tr>
                 </thead>
                 @forelse($treatments as $treatment)
@@ -32,7 +32,7 @@
                     </tr>
                     <tr>
                         @empty
-                    <td>You have no treatment yet!</td>
+                    <td>Sorry, you have no treatment yet!</td>
                     @endforelse
                     
                 </tbody>

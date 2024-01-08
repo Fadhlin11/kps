@@ -1,6 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('content')
+<br>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
@@ -11,22 +12,22 @@
 
                     <div class="card-body">
                         <div class="mb-3">
-                            <strong>Treatment Date:</strong> {{$treatment->date}}
+                            <strong>Treatment Date :</strong> {{$treatment->date}}
                         </div>
                         <div class="mb-3">
-                            <strong>Patient Name:</strong> {{$treatment->user->name}}
+                            <strong>Patient Name :</strong> {{$treatment->user->name}}
                         </div>
                         <div class="mb-3">
-                            <strong>Dentist Name:</strong> {{$treatment->dentist->name}}
+                            <strong>Dentist Name :</strong> {{$treatment->dentist->name}}
                         </div>
                         <div class="mb-3">
-                            <strong>Treatment Name:</strong> {{$treatment->name_of_treatment}}
+                            <strong>Treatment Name :</strong> {{$treatment->name_of_treatment}}
                         </div>
                         <div class="mb-3">
-                            <strong>Treatment Description:</strong> {{$treatment->treatment_description}}
+                            <strong>Treatment Description :</strong> {{$treatment->treatment_description}}
                         </div>
                         <div class="mb-3">
-                            <strong>Treatment Prescription (If any):</strong> {{$treatment->prescriptions}}
+                            <strong>Treatment Prescription (If Any) :</strong> {{$treatment->prescriptions}}
                         </div>
                     </div>
                 </div>
