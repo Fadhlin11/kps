@@ -3,8 +3,11 @@
 @section('content')
 
 @if(auth()->check() && auth()->user()->roles->name === 'patient')
+<body style="background: url('{{ asset('banner/background.png') }}') no-repeat center center fixed; background-size: cover; overflow: auto;">
+
     <!-- Content for patients when logged in -->
     <section class="container">
+        <br>
         <!-- Search Dentist Form -->
         <form action="{{url('/')}}" method="GET" class="mb-3">
             <div class="card">

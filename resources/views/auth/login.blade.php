@@ -13,7 +13,7 @@
             </div>
 
             <!-- Login Form -->
-            <div class="card p-4"> 
+            <div class="card p-4" style="background-color: rgba(255, 255, 255, 0.8);"> 
                 <div class="card-header">{{ __('LOGIN') }}</div>
 
                 <div class="card-body">

@@ -2,6 +2,8 @@
 
 @section('content')
 <div class="container mt-4">
+<body style="background: url('{{ asset('banner/background.png') }}') no-repeat center center fixed; background-size: cover; overflow: auto;">
+
     <div class="row">
         <div class="col-md-4 mx-auto mt-4">
             <div class="card">
@@ -9,7 +11,7 @@
                     <h4 class="text-center" style="font-family: 'Poppins', sans-serif; font-weight: bold; font-size: 24px; color: #333; letter-spacing: 1px; text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);">DENTIST</h4>
                     <img src="{{asset('images/' . $users->image)}}" style="width: 150px; height: 150px; border-radius: 50%; display: block; margin: auto;" alt="Dentist Image">
                     <br>
-                    <p class="lead" style="font-family: 'Poppins', sans-serif; font-size: 14px;"> Name : {{ucfirst($users->name)}}</p>
+                    <p class="lead" style="font-family: 'Poppins', sans-serif; font-size: 14px;"> Dentist Name : {{ucfirst($users->name)}}</p>
                 </div>
             </div>
         </div>

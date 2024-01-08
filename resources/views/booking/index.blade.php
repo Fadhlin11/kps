@@ -3,6 +3,8 @@
 @section('content')
 <br>
 <div class="container">
+<body style="background: url('{{ asset('banner/background.png') }}') no-repeat center center fixed; background-size: cover; overflow: auto;">
+
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
@@ -12,7 +14,7 @@
                     <table class="table">
                       <thead>
                         <tr>
-                          <th scope="col">#</th>
+                          <th scope="col">No.</th>
                           <th scope="col">Doctor</th>
                           <th scope="col">Time</th>
                           <th scope="col">Date for</th>

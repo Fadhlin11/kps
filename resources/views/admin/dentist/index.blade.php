@@ -13,8 +13,8 @@
                                         <i class="ik ik-inbox bg-blue"></i>
                                        
                                         <div class="d-inline">
-                                            <h5>Dentist</h5>
-                                            <span>List of All Dentists</span>
+                                            <h5>User</h5>
+                                            <span>List of Users</span>
                                         </div>
                                     </div>
                                 </div>
@@ -27,7 +27,7 @@
                                             <li class="breadcrumb-item">
                                                 <a href="#">Dentist</a>
                                             </li>
-                                            <li class="breadcrumb-item active" aria-current="page">Index</li>
+                                            <li class="breadcrumb-item active" aria-current="page">List</li>
                                         </ol>
                                     </nav>
                                 </div>
@@ -38,7 +38,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="card">
-                                    <div class="card-header"><h3>Dentist List</h3></div>
+                                    <div class="card-header"><h3>KPS Dentist List</h3></div>
                                     <div class="card-body">
                                         <table id="data_table" class="table">
                                             <thead>
