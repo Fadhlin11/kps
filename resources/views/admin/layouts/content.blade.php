@@ -103,9 +103,7 @@
                             <div class="d-flex justify-content-between align-items-center">
                             <div class="state">
                                 <h6>Today's Appointments</h6>
-                                <h2>{{ App\Models\Booking::where('user_id', auth()->user()->id)
-                                                        ->whereDate('date', now()->toDateString())
-                                                        ->count() }}
+                                <h2>{{ App\Models\Booking::where('dentist_id', auth()->user()->id)->count() }}
                                 </h2>
                             </div>
                                 <div class="icon">
@@ -122,7 +120,7 @@
                         <div class="widget-body">
                             <div class="d-flex justify-content-between align-items-center">
                             <div class="state">
-                                <h6>Total of Treatment Added</h6>
+                                <h6>Total of Treatments</h6>
                                 <h2>{{ App\Models\Treatment::where('dentist_id', auth()->user()->id)->count() }}</h2>
                             </div>
                                 <div class="icon">
