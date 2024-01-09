@@ -102,7 +102,7 @@
                         <div class="widget-body">
                             <div class="d-flex justify-content-between align-items-center">
                             <div class="state">
-                                <h6>Today's Appointments</h6>
+                                <h6>Appointments</h6>
                                 <h2>{{ App\Models\Booking::where('dentist_id', auth()->user()->id)->count() }}
                                 </h2>
                             </div>
